@@ -3,12 +3,7 @@
 #include <map>
 #include "tstack.h"
 
-int calc(char op, int a, int b) {
-switch (op) {
-  case '+': return (a + b);
-  case '-': return (a - b);
-  case '*': return (a * b);
-  case '/': if (b != 0) return (a / b);
+
 int priority(char op) {
 switch (op) {
   case '(': return 0;
@@ -39,7 +34,7 @@ std::string res;
 TStack <char, 100> stack;
 for (int i = 0; i < inf.size(); i++) {
   if (priority(inf[i]) == 4) {
-  res.push_back(inf[i] + ' ');     
+  res.push_back(inf[i] + ' ');
   } else {
     if (priority(inf[i]) == 0) {
       stack.push(inf[i]);
