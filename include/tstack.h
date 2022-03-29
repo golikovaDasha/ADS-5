@@ -9,9 +9,9 @@ class TStack {
   int top;
 
  public:
-  TStack():top(-1) {}
-  T get()const {//взять
-    return arr[top];
+  TStack():top(-1) { }
+  T get() const {
+      return arr[top];
   }
   bool isEmpty() const {
     return top == -1;//пустота
@@ -23,12 +23,7 @@ class TStack {
   if (!isEmpty())
     top--;
   }
-  T get() {
-    if (isEmpty())
-      throw "empty!";
-    else
-      return arr[top];
-  }
+  
   void push(T value) {
   if (isFull())
     throw "full";
