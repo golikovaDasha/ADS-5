@@ -23,7 +23,6 @@ class TStack {
   if (!isEmpty())
     top--;
   }
-  
   void push(T value) {
   if (isFull())
     throw "full";
