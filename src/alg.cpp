@@ -4,8 +4,7 @@
 #include "tstack.h"
 
 int priority(char a) {
-switch (a)
-{
+switch (a) {
   case '(': return 0;
   case ')': return 1;
   case '+': return 2;
@@ -16,12 +15,11 @@ switch (a)
 return -1;
 }
 int calc(char op, int a, int b) {
-switch (op)
-{
+switch (op) {
   case '+': return (a + b);
   case '-': return (a - b);
   case '*': return (a * b);
-  case '/': if (b!=0) return (a / b);
+  case '/': if (b != 0) return (a / b);
 }
 return 0;
 }
@@ -31,8 +29,7 @@ std::string res;
 for (int i = 0; i < inf.size(); i++) {
   if (inf[i] == -1) {
   res.push_back(inf[i]+' ');
-  }
-  else {
+  } else {
     if (priority(inf[i] == 0)) {
       stack.push();
   } else if (stack.isEmpty()) {
@@ -53,13 +50,17 @@ for (int i = 0; i < inf.size(); i++) {
   }
 }
 while (!stack.isEmpty()) {
-  res.push_back(stack.get()+' ');            
+  res.push_back(stack.get()+' ');
   stack.pop();
+  }
+for (int j = 0; j < res.size(); j++) {
+  if (res[res.size() - 1] == ' ')
+    res.erase(res.size() - 1);
   }
 }
 return res;
 }
-int eval(std::string pref) { 
+int eval(std::string pref) {
 TStack <int, 100> stack1;
 int res = 0;
 for (int i = 0; i < pref.size(); i++) {
