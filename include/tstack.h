@@ -29,7 +29,7 @@ public:
     else
       return arr[top];
   }
-  void push() {
+  void push(T value) {
   if (isFull())
     throw "full";
   else
